@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: nginx
+  # These are replica set labels.
+  namespace: roboshop
+  labels:
+    purpose: helm-demo
+    project: roboshop
+spec:
+  replicas: {{ .Values.deployment.replicasversion }}
+  selector:
+  # These labels are used to select pods.
+  # Whatever we mention in matechLabels section in this section
+  # we need to mention the same in the pod definition section as well.
+    matchLabels:
+      purpose: helm-demo
+      project: roboshop
+  # pod definition
+  template:
+    metadata:
+      labels:
+        purpose: helm-demo
+        project: roboshop
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:{{ .Values.deployment.imageversion }}

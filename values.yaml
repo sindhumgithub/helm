@@ -1,0 +1,8 @@
+deployment:
+  replicasversion: 4
+  imageversion: latest
+
+Service:
+  typename: LoadBalancer
+  portno: 80
+
