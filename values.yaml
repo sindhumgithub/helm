@@ -1,6 +1,6 @@
 deployment:
   replicasversion: 4
-  imageversion: latest
+  imageversion: stable-bookworm-perm
 
 Service:
   typename: LoadBalancer
